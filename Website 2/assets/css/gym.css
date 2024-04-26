@@ -1,0 +1,307 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #070a0d; /* Dark blue background */
+    color: #ffffff; /* White text color */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+.header {
+    background-color: #1e2226; /* Dark gray header background */
+    padding: 20px 0;
+}
+
+.navigation {
+    text-align: center;
+}
+
+.nav-button {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #ffffff; /* White navigation text color */
+}
+
+.nav-button.active {
+    font-weight: bold;
+}
+
+/* Hero Styles */
+.hero {
+    position: relative;
+    text-align: center;
+    color: #ffffff; /* White hero text color */
+    height: 100vh; /* Set hero height to viewport height */
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the entire hero */
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Ensure content appears above the image */
+}
+
+.hero-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.hero-description {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.hero-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f5cb5c; /* Yellow button background */
+    color: #070a0d; /* Dark blue button text color */
+    text-decoration: none;
+}
+
+/* Slideshow Styles */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Hide overflow to prevent corners from showing */
+}
+
+.mySlides {
+    display: none;
+}
+
+/* Fade animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from { opacity: .4; } 
+    to { opacity: 1; }
+}
+
+/* BMI Calculator Page Styles */
+.bmi-form-container {
+    margin-top: 250px; /* Adjust as needed to create space between hero and form */
+}
+
+.bmi-form {
+    max-width: 400px;
+    margin: 0 auto; /* Center the form horizontally */
+    padding: 20px;
+    background-color: #1e2226; /* Dark gray form background */
+    border-radius: 10px; /* Rounded form shape */
+    text-align: center;
+}
+
+.bmi-form .form-group {
+    flex: 1 1 100%; /* Adjust the width of form fields */
+    margin-right: 10px;
+}
+
+.bmi-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #ffffff; /* White label text color */
+}
+
+.bmi-form input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #32383c; /* Grayish-blue input background */
+    color: #ffffff; /* White input text color */
+}
+
+.bmi-form .submit-button {
+    width: 50%;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: #f5cb5c; /* Yellow button background */
+    color: #070a0d; /* Dark blue button text color */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.bmi-form .submit-button:hover {
+    background-color: #ebebeb; /* Light gray button background on hover */
+}
+
+/* Membership Form Page Styles */
+.membership-form-container {
+    margin-top: 250px; /* Adjust as needed to create space between hero and form */
+}
+
+.membership-form-container .membership-form {
+    max-width: 400px;
+    margin: 0 auto; /* Center the form horizontally */
+    padding: 20px;
+    background-color: #1e2226; /* Dark gray form background */
+    border-radius: 10px; /* Rounded form shape */
+    text-align: center;
+}
+
+.membership-form-container .membership-form .form-group {
+    flex: 1 1 100%; /* Adjust the width of form fields */
+    margin-right: 10px;
+}
+
+.membership-form-container .membership-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #ffffff; /* White label text color */
+}
+
+.membership-form-container .membership-form input[type="text"],
+.membership-form-container .membership-form input[type="email"],
+.membership-form-container .membership-form input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #32383c; /* Grayish-blue input background */
+    color: #ffffff; /* White input text color */
+}
+
+.membership-form-container .membership-form .submit-button {
+    width: 50%;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: #f5cb5c; /* Yellow button background */
+    color: #070a0d; /* Dark blue button text color */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.membership-form-container .membership-form .submit-button:hover {
+    background-color: #ebebeb; /* Light gray button background on hover */
+}
+
+/* Welcome Section Styles */
+.welcome {
+    background-color: #070a0d; /* Dark blue welcome section background */
+    padding: 50px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.section-description {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.section-button {
+    display: block;
+    text-align: center;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #f5cb5c; /* Yellow button background */
+    color: #070a0d; /* Dark blue button text color */
+    text-decoration: none;
+}
+
+/* Services Section Styles */
+.services {
+    padding: 50px 0;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.service-card {
+    background-color: #1e2226; /* Dark gray service card background */
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.service-card i {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+/* Map Section Styles */
+.map {
+    height: 400px;
+    background-color: #070a0d; /* Dark blue map section background */
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+/* Footer Styles */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #1e2226; /* Dark gray footer background */
+    color: #ffffff; /* White footer text color */
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Parallax for Other Pages */
+.parallax::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("gym.png"); /* Replace with your parallax image path */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+}
+
+
+
+
+
+
+
+
+
+

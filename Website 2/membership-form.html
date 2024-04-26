@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Strength Gym - Membership Form</title>
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/gym.css">
+  <script src="https://kit.fontawesome.com/bbd268f373.js" crossorigin="anonymous"></script>
+</head>
+<body class="parallax">
+
+  <header class="header">
+    <nav class="navigation">
+      <a href="index.html" class="nav-button">Home</a>
+      <a href="about.html" class="nav-button">About Us</a>
+      <a href="membership-form.html" class="nav-button active">Membership</a>
+      <a href="bmi-calculator.html" class="nav-button">BMI Calculator</a>
+    </nav>
+  </header>
+
+  <main class="container membership-form-container">
+    <form id="membership-form" class="membership-form">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required>
+      </div>
+      <button type="submit" class="submit-button">Submit</button>
+    </form>
+    
+    <!-- Response message -->
+    <div id="response-message" class="response-message" style="display: none;"></div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 Strength Gym. All Rights Reserved.</p>
+      
+    </div>
+  </footer>
+
+  <script>
+    // Event listener for membership form submission
+    document.getElementById('membership-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form submission
+
+        // Form validation
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        
+        if (!name || !email || !phone) {
+            alert('Please fill out all fields.');
+            return;
+        }
+
+        // Display a courteous thank you message including the name of the gym
+        alert(`Thank you ${name} for choosing Strength Gym! We appreciate your interest in our gym,you will recieve a follow up email shortly with our membership plan options. .`);
+
+        // Reset the form
+        this.reset();
+    });
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,52 @@
+/* About Page Styles */
+.about {
+    padding: 50px 0;
+}
+
+.about .team-members {
+    margin-bottom: 20px;
+}
+
+.about .team-member img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.about .team-member h3 {
+    font-size: 24px;
+}
+
+.about .team-member p {
+    font-size: 16px;
+}
+
+.about .testimonials {
+    margin-bottom: 20px;
+}
+
+.about .testimonial p {
+    font-size: 16px;
+    font-style: italic;
+}
+
+/* Parallax for About Page */
+.about.parallax::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("about-bg.jpg"); /* Replace with your about page parallax image path */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+    opacity: 0.5; /* Adjust the opacity as needed */
+}
+
+  
