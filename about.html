@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Strength Gym - About Us</title>
+  <link rel="stylesheet" href="assets/css/gym.css">
+  <style>
+    /* Parallax for About Page */
+    .about.parallax::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("assets/images/gym.png");
+      /* Adjust the path to your parallax image */
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      z-index: -1;
+      opacity: 0.5;
+      /* Adjust the opacity as needed */
+    }
+
+    /* About Us Section Styles */
+    .about-us {
+      padding: 50px 0;
+      color: #fff;
+      text-align: center;
+    }
+
+    .about-us-title {
+      font-size: 36px;
+      margin-bottom: 30px;
+    }
+
+    .about-us-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .about-us-content p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    /* Boost Performance Section Styles */
+    .boost-performance {
+      padding: 100px 0;
+      background-color:#2c251d;
+      text-align: center;
+    }
+
+    .boost-performance-title {
+      font-size: 36px;
+      margin-bottom: 30px;
+    }
+
+    .boost-performance-image img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .boost-performance-text {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .boost-performance-text p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    /* Team Section Styles */
+    .team-section {
+      padding: 100px 0;
+      background-color: #2c251d;
+      text-align: center;
+    }
+
+    .team-title {
+      font-size: 36px;
+      margin-bottom: 30px;
+    }
+
+    .team-members {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .team-member {
+      flex: 0 1 calc(33.33% - 60px);
+      max-width: calc(33.33% - 60px);
+      text-align: left;
+      background-color: #1e2226;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .team-member-image-container {
+      max-width: 150px;
+      margin: 0 auto 20px;
+    }
+
+    .team-member-image {
+      width: 100%;
+      height: auto;
+      border-radius: 50%;
+    }
+
+    .team-member-details {
+      padding: 0 20px;
+    }
+
+    .team-member-name {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .team-member-role {
+      font-size: 18px;
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+
+    .team-member-bio {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* Testimonial Section Styles */
+    .testimonial {
+      padding: 100px 0;
+      text-align: center;
+    }
+
+    .testimonial-title {
+      font-size: 36px;
+      margin-bottom: 30px;
+    }
+
+    .testimonial-content p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .testimonial-author {
+      font-style: italic;
+    }
+
+    /* Quote Section Styles */
+    .quote {
+      padding: 100px 0;
+      background-color: #1e2226;
+      text-align: center;
+    }
+
+    .quote-title {
+      font-size: 36px;
+      margin-bottom: 30px;
+    }
+
+    .quote-content p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .quote-author {
+      font-style: italic;
+    }
+
+    /* Footer Styles */
+    .footer {
+      padding: 50px 0;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+    }
+
+    .footer p {
+      font-size: 18px;
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body class="about parallax">
+
+  <header class="header">
+    <nav class="navigation">
+      <a href="index.html" class="nav-button">Home</a>
+      <a href="about.html" class="nav-button active">About Us</a>
+      <a href="membership-form.html" class="nav-button">Membership</a>
+      <a href="bmi-calculator.html" class="nav-button">BMI Calculator</a>
+    </nav>
+    <section class="hero">
+      <img src="assets/images/hero6.jpeg" alt="Fitness hero image" class="hero-image">
+      <div class="hero-overlay"></div>
+      <div class="container">
+        <div class="hero-text">
+          <h1 class="hero-title">Empower Your Fitness Journey</h1>
+          <p class="hero-description">Reach your fitness goals with our personalized programs.</p>
+          <a href="membership-form.html" class="hero-button">Get Started</a>
+        </div>
+      </div>
+    </section>
+  </header>
+
+  <section class="about-us">
+    <div class="container">
+      <h2 class="about-us-title">About Us</h2>
+      <div class="about-us-content">
+        <p>At Strength Gym, we are committed to empowering individuals to achieve their fitness goals through
+          personalized programs and expert guidance.</p>
+        <p>Our team of expert trainers, including fitness trainers, yoga instructors, and pilates instructors, are
+          passionate about helping you succeed on your fitness journey.</p>
+        <p>We believe in a holistic approach to wellness, focusing not only on physical fitness but also on mental and
+          emotional well-being.</p>
+        <p>Join our welcoming community of fitness enthusiasts and experience the supportive and motivating environment
+          at Strength Gym.</p>
+        <p>With our proven track record of delivering results, you can trust us to help you achieve your fitness goals
+          and lead a healthier, happier life.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Boost Performance Section -->
+  <section class="boost-performance">
+    <div class="container">
+      <h2 class="boost-performance-title">Boost Performance</h2>
+     
+      <div class="boost-performance-text">
+        <p>Take your fitness to the next level with our Boost Performance program. Our team of certified trainers will
+          design a customized workout plan tailored to your individual needs and goals.</p>
+        <p>Whether you're looking to build strength, improve endurance, or enhance flexibility, our comprehensive
+          program covers all aspects of fitness to help you achieve optimal results.</p>
+        <p>With state-of-the-art equipment and expert guidance, you'll experience noticeable improvements in your
+          performance and overall well-being.</p>
+      </div>
+    </div>
+  </section>
+  <!-- End of Boost Performance Section -->
+
+  <section class="team-section">
+    <div class="container">
+      <h2 class="team-title">Meet Our Team</h2>
+      <div class="team-members">
+        <div class="team-member">
+          <div class="team-member-image-container">
+            <img src="assets/images/Instructor2.png" alt="Team Member 1" class="team-member-image">
+          </div>
+          <div class="team-member-details">
+            <h3 class="team-member-name">John Doe</h3>
+            <p class="team-member-role">Fitness Trainer</p>
+            <p class="team-member-bio">John is not just a fitness trainer; he's your ultimate motivator. With over a
+              decade of experience in personal training, he's dedicated to sculpting not only your body but also your
+              mindset. His passion for fitness is contagious, and he's committed to helping you crush your fitness
+              goals.</p>
+          </div>
+        </div>
+        <div class="team-member">
+          <div class="team-member-image-container">
+            <img src="assets/images/Instructor1.png" alt="Team Member 2" class="team-member-image">
+          </div>
+          <div class="team-member-details">
+            <h3 class="team-member-name">Sarah Bell</h3>
+            <p class="team-member-role">Yoga Instructor</p>
+            <p class="team-member-bio">Sarah's journey into yoga began as a quest for inner peace, and now she's on a
+              mission to share that tranquility with others. Her classes are not just about poses; they're a holistic
+              experience that nurtures both body and soul.</p>
+          </div>
+        </div>
+        <!-- Add three more team members -->
+        <div class="team-member">
+          <div class="team-member-image-container">
+            <img src="assets/images/Instructor3.png" alt="Team Member 3" class="team-member-image">
+          </div>
+          <div class="team-member-details">
+            <h3 class="team-member-name">Emily Brown</h3>
+            <p class="team-member-role">Fitness Trainer</p>
+            <p class="team-member-bio">Emily is dedicated to helping individuals achieve their fitness goals. With her
+              energetic personality and extensive knowledge, she creates dynamic workouts that keep clients motivated
+              and engaged.</p>
+          </div>
+        </div>
+        <div class="team-member">
+          <div class="team-member-image-container">
+            <img src="assets/images/Instructor6.png" alt="Team Member 4" class="team-member-image">
+          </div>
+          <div class="team-member-details">
+            <h3 class="team-member-name">Michael Smith</h3>
+            <p class="team-member-role">Pilates Instructor</p>
+            <p class="team-member-bio">Michael is passionate about helping clients improve their strength, flexibility,
+              and posture through Pilates. With his keen attention to detail and supportive approach, he guides clients
+              towards achieving their fitness goals.</p>
+          </div>
+        </div>
+        <div class="team-member">
+          <div class="team-member-image-container">
+            <img src="assets/images/Instructor4.png" alt="Team Member 5" class="team-member-image">
+          </div>
+          <div class="team-member-details">
+            <h3 class="team-member-name">Jessica Green</h3>
+            <p class="team-member-role">Yoga Instructor</p>
+            <p class="team-member-bio">Jessica believes in the transformative power of yoga to heal the body and calm
+              the mind. With her nurturing guidance, she helps students cultivate strength, flexibility, and inner
+              peace.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <aside class="testimonial">
+    <div class="container">
+      <h2 class="testimonial-title">Client Testimonials</h2>
+      <div class="testimonial-content">
+        <p>"I've been a member for over a year now and I've seen amazing results. The trainers are fantastic and the
+          atmosphere is always welcoming."</p>
+        <p class="testimonial-author">- Sarah Johnson</p>
+      </div>
+    </div>
+  </aside>
+
+  <aside class="quote">
+    <div class="container">
+      <h2 class="quote-title">Inspiration of the Day</h2>
+      <div class="quote-content">
+        <p>"The only bad workout is the one that didn't happen."</p>
+        <p class="quote-author">- Jason Paisley</p>
+      </div>
+    </div>
+  </aside>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 Strength Gym. All Rights Reserved.</p>
+
+    
+    </div>
+  </footer>
+
+</body>
+
+</html>
