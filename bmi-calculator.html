@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Strength Gym - BMI Calculator</title>
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/gym.css">
+  <script src="https://kit.fontawesome.com/bbd268f373.js" crossorigin="anonymous"></script>
+  <style>
+    /* Add custom CSS styles here */
+    .bmi-calculator-container {
+      margin-top: 200px;
+    }
+
+    .bmi-form {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #1e2226;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .bmi-form .form-group {
+      margin-bottom: 20px;
+    }
+
+    .bmi-form label {
+      display: block;
+      margin-bottom: 5px;
+      color: #ffffff;
+    }
+
+    .bmi-form input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #32383c;
+      color: #ffffff;
+    }
+
+    .bmi-form .calculate-button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 10px;
+      background-color: #f5cb5c;
+      color: #070a0d;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .bmi-form .calculate-button:hover {
+      background-color: #ebebeb;
+    }
+  </style>
+</head>
+
+<body class="parallax">
+
+  <header class="header">
+    <nav class="navigation">
+      <a href="index.html" class="nav-button">Home</a>
+      <a href="about.html" class="nav-button">About Us</a>
+      <a href="membership-form.html" class="nav-button">Membership</a>
+      <a href="bmi-calculator.html" class="nav-button active">BMI Calculator</a>
+    </nav>
+  </header>
+
+  <main class="container bmi-calculator-container">
+    <form id="bmi-form" class="bmi-form">
+      <div class="form-group">
+        <label for="feet">Height (feet):</label>
+        <input type="number" id="feet" name="feet" required>
+      </div>
+      <div class="form-group">
+        <label for="inches">Height (inches):</label>
+        <input type="number" id="inches" name="inches" required>
+      </div>
+      <div class="form-group">
+        <label for="pounds">Weight (pounds):</label>
+        <input type="number" id="pounds" name="pounds" required>
+      </div>
+      <button type="button" class="calculate-button" onclick="calculateBMI()">Calculate BMI</button>
+    </form>
+
+    <!-- Response message -->
+    <div id="response-message" class="response-message" style="display: none;"></div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 Strength Gym. All Rights Reserved.</p>
+
+    </div>
+  </footer>
+
+  <script>
+    function calculateBMI() {
+      const feet = parseFloat(document.getElementById('feet').value);
+      const inches = parseFloat(document.getElementById('inches').value);
+      const pounds = parseFloat(document.getElementById('pounds').value);
+
+      if (isNaN(feet) || isNaN(inches) || isNaN(pounds) || feet < 0 || inches < 0 || pounds < 0) {
+        alert('Please enter valid height and weight.');
+        return;
+      }
+
+      // Height conversion to inches
+      const heightInInches = feet * 12 + inches;
+
+      // BMI calculation
+      const bmi = (pounds / (heightInInches * heightInInches)) * 703;
+
+      // Interpretation
+      let interpretation;
+      if (bmi < 18.5) {
+        interpretation = 'Underweight';
+      } else if (bmi < 24.9) {
+        interpretation = 'Normal weight';
+      } else if (bmi < 29.9) {
+        interpretation = 'Overweight';
+      } else {
+        interpretation = 'Obese';
+      }
+
+      // Display BMI result
+      alert(`Your BMI: ${bmi.toFixed(1)} (${interpretation})`);
+      document.getElementById('bmi-form').reset();
+    }
+  </script>
+
+</body>
+
+</html>
