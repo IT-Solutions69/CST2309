@@ -5,18 +5,45 @@ document.addEventListener('DOMContentLoaded', function() {
     showSlides();
 
     function showSlides() {
-        const slides = document.getElementsByClassName("mySlides");
-        if (slides.length === 0) {
-            return; // No slides found, exit the function
+        const slideshowContainer = document.getElementById("slideshow-container");
+        if (!slideshowContainer) {
+            return; // No slideshow container found, exit the function
         }
+
+        const slides = [
+            "assets/images/Hero11.jpeg",
+            "assets/images/hero12.jpeg",
+            "assets/images/hero13.jpeg"
+        ];
+
+        // Clear existing slides
+        slideshowContainer.innerHTML = "";
+
+        // Add new slides dynamically
         for (let i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";  
+            const slide = document.createElement("div");
+            slide.classList.add("mySlides", "fade");
+            const img = document.createElement("img");
+            img.src = slides[i];
+            img.style.width = "100%";
+            slide.appendChild(img);
+            slideshowContainer.appendChild(slide);
         }
+
         slideIndex++;
-        if (slideIndex > slides.length) {
+        const allSlides = document.getElementsByClassName("mySlides");
+        if (slideIndex > allSlides.length) {
             slideIndex = 1;
-        }    
-        slides[slideIndex - 1].style.display = "block";  
+        }
+
+        // Hide all slides
+        for (let i = 0; i < allSlides.length; i++) {
+            allSlides[i].style.display = "none";
+        }
+
+        // Display current slide
+        allSlides[slideIndex - 1].style.display = "block";
+
         setTimeout(showSlides, 5000); // Change image every 5 seconds
     }
 
@@ -24,15 +51,6 @@ document.addEventListener('DOMContentLoaded', function() {
     function plusSlides(n) {
         showSlides(slideIndex += n);
     }
-
-    // Event listener for navigation arrows
-    document.querySelector('.prev').addEventListener('click', function() {
-        plusSlides(-1);
-    });
-
-    document.querySelector('.next').addEventListener('click', function() {
-        plusSlides(1);
-    });
 
     // Reset slideshow when page is loaded
     function resetSlides() {
@@ -42,6 +60,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     window.addEventListener('load', function() {
         resetSlides();
+    });
+
+    // Event listener for navigation arrows
+    document.querySelector('.prev').addEventListener('click', function() {
+        plusSlides(-1);
+    });
+
+    document.querySelector('.next').addEventListener('click', function() {
+        plusSlides(1);
     });
 
     // Function to reset the form after submission
@@ -100,5 +127,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
 
 
