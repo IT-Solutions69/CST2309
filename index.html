@@ -1,122 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Strength Gym - Home</title>
-  <link rel="stylesheet" href="assets/css/gym.css"> 
-  <style>
-    /* Add your custom CSS styles here if needed */
-  </style>
-  <script src="https://kit.fontawesome.com/bbd268f373.js" crossorigin="anonymous"></script>
-  <script>
-    function loadGoogleMaps() {
-      const script = document.createElement('script');
-      script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyBuLi-Tc5k39MdPzXu5eo5Gtc_Z9ctOElY&callback=initMap&libraries=maps,marker&v=beta&async=1`;
-      document.body.appendChild(script);
-    }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strength Gym - Home</title>
+    <link rel="stylesheet" href="assets/css/gym.css">
+
+    <script src="https://kit.fontawesome.com/bbd268f373.js" crossorigin="anonymous"></script>
+    <script>
+        function loadGoogleMaps() {
+            const script = document.createElement('script');
+            script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyBuLi-Tc5k39MdPzXu5eo5Gtc_Z9ctOElY&callback=initMap&libraries=maps,marker&v=beta&async=1`;
+            document.body.appendChild(script);
+        }
+    </script>
 </head>
+
 <body class="parallax">
 
-  <header class="header">
-    <nav class="navigation">
-      <a href="index.html" class="nav-button active">Home</a>
-      <a href="about.html" class="nav-button">About Us</a>
-      <a href="membership-form.html" class="nav-button">Membership</a>
-      <a href="bmi-calculator.html" class="nav-button">BMI Calculator</a>
-    </nav>
-  </header>
+    <header class="header">
+        <nav class="navigation">
+            <a href="index.html" class="nav-button active">Home</a>
+            <a href="about.html" class="nav-button">About Us</a>
+            <a href="membership-form.html" class="nav-button">Membership</a>
+            <a href="bmi-calculator.html" class="nav-button">BMI Calculator</a>
+        </nav>
+    </header>
 
-  <section class="hero">
-    <!-- Slideshow within the hero section -->
-    <div class="slideshow-container">
-      <div class="mySlides fade">
-        <img src="assets/images/Hero11.jpeg" style="width:100%">
-      </div>
-
-      <div class="mySlides fade">
-        <img src="assets/images/hero12.jpeg" style="width:100%">
-      </div>
-
-      <div class="mySlides fade">
-        <img src="assets/images/hero13.jpeg" style="width:100%">
-      </div>
-    </div>
-    <!-- End of Slideshow -->
-    <div class="hero-overlay"></div>
-    <div class="container">
-      <div class="hero-text">
-        <h1 class="hero-title">Empower Your Fitness Journey</h1>
-        <p class="hero-description">Reach your fitness goals with our personalized programs.</p>
-        <a href="membership-form.html" class="hero-button">Join Us</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="welcome">
-    <div class="container">
-      <h2 class="section-title">Welcome to Strength Gym!</h2>
-      <p class="section-description">We are committed to helping you achieve your fitness goals in a supportive and motivating environment.</p>
-      <a href="about.html" class="section-button">Learn More</a>
-    </div>
-  </section>
-
-  <section class="services">
-    <div class="container">
-      <h2 class="section-title">Our Services</h2>
-      <div class="service-grid">
-        <div class="service-card">
-          <i class="fas fa-dumbbell"></i>
-          <h3 class="service-title">Strength Training</h3>
-          <p class="service-description">Build muscle and improve strength.</p>
+    <section class="hero">
+        <!-- Slideshow container -->
+        <div class="slideshow-container" id="slideshow-container">
+            <!-- Slides will be dynamically added here -->
         </div>
-        <div class="service-card">
-          <i class="fas fa-running"></i>
-          <h3 class="service-title">Cardio</h3>
-          <p class="service-description">Improve your cardiovascular health.</p>
+        <!-- End of Slideshow -->
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-text">
+                <h1 class="hero-title">Empower Your Fitness Journey</h1>
+                <p class="hero-description">Reach your fitness goals with our personalized programs.</p>
+                <a href="membership-form.html" class="hero-button">Get Started</a>
+            </div>
         </div>
-        <div class="service-card">
-          <i class="fas fa-spa"></i>
-          <h3 class="service-title">Yoga</h3>
-          <p class="service-description">Increase flexibility and mindfulness.</p>
+    </section>
+
+    <section class="welcome">
+        <div class="container">
+            <h2 class="section-title">Welcome to Strength Gym!</h2>
+            <p class="section-description">We are committed to helping you achieve your fitness goals in a supportive
+                and motivating environment.</p>
+            <a href="about.html" class="section-button">Learn More</a>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="map">
-    <!-- Google Maps integration -->
-    <div id="map" style="height: 400px;"></div>
-    <script>
-      function initMap() {
-        const mapOptions = {
-          center: { lat: 40.72874069213867, lng: -74.00957489013672 },
-          zoom: 14,
-        };
-        const map = new google.maps.Map(document.getElementById('map'), mapOptions);
-        const marker = new google.maps.Marker({
-          position: { lat: 40.72874069213867, lng: -74.00957489013672 },
-          map: map,
-          title: 'Strength Gym'
-        });
-      }
-    </script>
-    <script>
-      loadGoogleMaps();
-    </script>
-  </section>
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <i class="fas fa-dumbbell"></i>
+                    <h3 class="service-title">Strength Training</h3>
+                    <p class="service-description">Build muscle and improve strength.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-running"></i>
+                    <h3 class="service-title">Cardio</h3>
+                    <p class="service-description">Improve your cardiovascular health.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-spa"></i>
+                    <h3 class="service-title">Yoga</h3>
+                    <p class="service-description">Increase flexibility and mindfulness.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2024 Strength Gym. All Rights Reserved.</p>
-      
-    </div>
-  </footer>
+    <section class="map">
+        <!-- Google Maps integration -->
+        <div id="map" style="height: 400px;"></div>
+        <script>
+            function initMap() {
+                const mapOptions = {
+                    center: { lat: 40.72874069213867, lng: -74.00957489013672 },
+                    zoom: 14,
+                };
+                const map = new google.maps.Map(document.getElementById('map'), mapOptions);
+                const marker = new google.maps.Marker({
+                    position: { lat: 40.72874069213867, lng: -74.00957489013672 },
+                    map: map,
+                    title: 'Strength Gym'
+                });
+            }
+        </script>
+        <script>
+            loadGoogleMaps();
+        </script>
+    </section>
 
-  <script src="assets/js/gym.js"></script>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Strength Gym. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/gym.js"></script>
 </body>
+
 </html>
+
 
 
 
