@@ -12,9 +12,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         var slides = [
-            "assets/images/hero18.png",
+             "assets/images/hero18.png",
             "assets/images/hero19.png",
             "assets/images/hero12.jpeg",
+            
         ];
 
         // Clear existing slides
