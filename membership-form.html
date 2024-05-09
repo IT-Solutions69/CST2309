@@ -21,57 +21,61 @@
 
   <main class="container membership-form-container">
     <form id="membership-form" class="membership-form">
-      <div class="form-group">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-      </div>
-      <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-      </div>
-      <div class="form-group">
-        <label for="phone">Phone:</label>
-        <input type="tel" id="phone" name="phone" required>
-      </div>
-      <button type="submit" class="submit-button">Submit</button>
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required autocomplete="name">
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required autocomplete="email">
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required autocomplete="tel">
+        </div>
+        <div class="form-group">
+            <label for="membership-plan">Membership Plan:</label>
+            <select id="membership-plan" name="membership-plan" required autocomplete="membership-plan">
+                <option value="" selected disabled>Select Membership Plan</option>
+                <option value="basic">Basic - $50/month</option>
+                <option value="standard">Standard - $75/month</option>
+                <option value="premium">Premium - $100/month</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="credit-card">Credit Card Number:</label>
+            <input type="text" id="credit-card" name="credit-card" required autocomplete="credit-card">
+        </div>
+        <div class="form-group expiration-group">
+            <label for="exp-month">Expiry Month:</label>
+            <input type="number" id="exp-month" name="exp-month" min="1" max="12" required autocomplete="cc-exp-month">
+            <label for="exp-year">Expiry Year (YYYY):</label>
+            <input type="number" id="exp-year" name="exp-year" min="2024" required autocomplete="cc-exp-year">
+        </div>
+        <div class="form-group">
+            <label for="card-type">Card Type:</label>
+            <select id="card-type" name="card-type" required autocomplete="card-type">
+                <option value="" selected disabled>Select Card Type</option>
+                <option value="amex">American Express</option>
+                <option value="visa">Visa</option>
+                <option value="mastercard">Mastercard</option>
+                <option value="discover">Discover</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="cvc">CVC:</label>
+            <input type="text" id="cvc" name="cvc" required autocomplete="cvc">
+        </div>
+        <button type="submit" class="submit-button">Submit</button>
     </form>
-    
-    <!-- Response message -->
-    <div id="response-message" class="response-message" style="display: none;"></div>
   </main>
 
   <footer class="footer">
     <div class="container">
       <p>&copy; 2024 Strength Gym. All Rights Reserved.</p>
-      
-    </div>
-  </footer>
 
-  <script>
-    // Event listener for membership form submission
-    document.getElementById('membership-form').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent form submission
 
-        // Form validation
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const phone = document.getElementById('phone').value;
-        
-        if (!name || !email || !phone) {
-            alert('Please fill out all fields.');
-            return;
-        }
 
-        // Display a courteous thank you message including the name of the gym
-        alert(`Thank you ${name} for choosing Strength Gym! We appreciate your interest in our gym,you will recieve a follow up email shortly with our membership plan options. .`);
-
-        // Reset the form
-        this.reset();
-    });
-  </script>
-
-</body>
-</html>
 
 
 
