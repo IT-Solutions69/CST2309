@@ -12,10 +12,9 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         var slides = [
-             "assets/images/hero18.png",
+            "assets/images/hero18.png",
             "assets/images/hero19.png",
             "assets/images/hero12.jpeg",
-            
         ];
 
         // Clear existing slides
@@ -46,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Display current slide
         allSlides[slideIndex - 1].style.display = "block";
 
-        setTimeout(showSlides, 8000); // Change image every 8 seconds
+        setTimeout(showSlides, 5000); // Change image every 5 seconds
     }
 
     // Function to change slides
@@ -78,56 +77,30 @@ document.addEventListener('DOMContentLoaded', function () {
         form.reset();
     }
 
-    // Event listener for BMI form submission
-    var bmiForm = document.getElementById('bmi-form');
-    if (bmiForm) {
-        bmiForm.addEventListener('submit', function (event) {
-            event.preventDefault();
+    // Load Google Maps API asynchronously
+    function loadGoogleMaps() {
+        var script = document.createElement('script');
+        script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBuLi-Tc5k39MdPzXu5eo5Gtc_Z9ctOElY&callback=initMap&libraries=maps,marker&v=beta&async=1";
+        script.async = true;
+        document.body.appendChild(script);
+    }
 
-            var height = parseFloat(document.getElementById('height').value);
-            var weight = parseFloat(document.getElementById('weight').value);
-
-            if (isNaN(height) || isNaN(weight) || height <= 0 || weight <= 0) {
-                alert('Please enter valid height and weight.');
-                return;
-            }
-
-            // BMI calculation
-            var heightInMeters = height / 100; // Convert height from cm to meters
-            var bmi = weight / (heightInMeters * heightInMeters);
-
-            // Interpretation
-            var interpretation;
-            if (bmi < 18.5) {
-                interpretation = 'Underweight';
-            } else if (bmi < 24.9) {
-                interpretation = 'Normal weight';
-            } else if (bmi < 29.9) {
-                interpretation = 'Overweight';
-            } else {
-                interpretation = 'Obese';
-            }
-
-            // Display BMI result
-            alert("Your BMI: ".concat(bmi.toFixed(1), " (").concat(interpretation, ")"));
-            resetForm(event.target);
+    // Initialize Google Map
+    function initMap() {
+        var mapOptions = {
+            center: { lat: 40.72874069213867, lng: -74.00957489013672 },
+            zoom: 14,
+        };
+        var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+        var marker = new google.maps.marker.AdvancedMarkerElement({
+            position: { lat: 40.72874069213867, lng: -74.00957489013672 },
+            map: map,
+            title: 'Strength Gym'
         });
     }
 
-    // Event listener for membership form submission using event delegation
-    document.addEventListener('submit', function (event) {
-        if (event.target && event.target.id === 'membership-form') {
-            event.preventDefault();
-
-            // Validation and submission logic for the membership form can be added here
-
-            // Display a courteous thank you message including the name of the gym
-            alert("Thank you for choosing Fitness Studio! We appreciate your interest in our gym.");
-
-            // Reset the form
-            resetForm(event.target);
-        }
-    });
+    // Load Google Maps API
+    loadGoogleMaps();
 });
 
 
