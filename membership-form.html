@@ -7,6 +7,9 @@
   <link rel="stylesheet" href="assets/css/reset.css">
   <link rel="stylesheet" href="assets/css/gym.css">
   <script src="https://kit.fontawesome.com/bbd268f373.js" crossorigin="anonymous"></script>
+  <style>
+    /* Add any custom styles here */
+  </style>
 </head>
 <body class="parallax">
 
@@ -37,9 +40,9 @@
             <label for="membership-plan">Membership Plan:</label>
             <select id="membership-plan" name="membership-plan" required autocomplete="membership-plan">
                 <option value="" selected disabled>Select Membership Plan</option>
-                <option value="basic">Basic - $50/month</option>
-                <option value="standard">Standard - $75/month</option>
-                <option value="premium">Premium - $100/month</option>
+                <option value="basic" data-price="50">Basic - $50/month</option>
+                <option value="standard" data-price="75">Standard - $75/month</option>
+                <option value="premium" data-price="100">Premium - $100/month</option>
             </select>
         </div>
         <div class="form-group">
@@ -66,13 +69,23 @@
             <label for="cvc">CVC:</label>
             <input type="text" id="cvc" name="cvc" required autocomplete="cvc">
         </div>
-        <button type="submit" class="submit-button">Submit</button>
+        <button type="submit" class="submit-button" onclick="submitMembershipForm()">Submit</button>
     </form>
+
+    <!-- Response message -->
+    <div id="response-message" class="response-message" style="display: none;"></div>
   </main>
 
   <footer class="footer">
     <div class="container">
       <p>&copy; 2024 Strength Gym. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/membership.js"></script>
+</body>
+</html>
+
 
 
 
