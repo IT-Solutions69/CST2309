@@ -54,7 +54,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("gym.png"); /* Replace with your about page parallax image path */
+    background-image: url("gym.png"); 
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
