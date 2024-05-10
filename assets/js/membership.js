@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
             return; // Exit if validation fails
         }
 
-        // Local form processing (example - display success message)
+        // Local form processing (display success message)
         const message = `Thank you, ${name}, for choosing Strength Gym! You have selected the ${plan} plan at $${price} per month. Welcome aboard!`;
         alert(message);
 
