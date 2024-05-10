@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const message = `Thank you, ${name}, for choosing Strength Gym! You have selected the ${plan} plan at $${price} per month. Welcome aboard!`;
         alert(message);
 
-        // Reset the form (optional)
+        // Reset the form 
         membershipForm.reset();
     });
 });
