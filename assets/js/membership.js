@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
+    "use strict";
     // Handle membership form submission
     const membershipForm = document.getElementById('membership-form');
     membershipForm.addEventListener('submit', function (event) {
@@ -6,8 +7,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Extract form data (with optional chaining for error handling)
         const name = document.getElementById('name')?.value || "";
-        const plan = document.getElementById('membership-plan')?.value || "";
-        const price = document.getElementById('membership-price')?.value || "";
+        const planElement = document.getElementById('membership-plan');
+        const plan = planElement?.value || "";
+        const price = planElement.options[planElement.selectedIndex].getAttribute('data-price') || "";
+        const email = document.getElementById('email')?.value || "";
+        const phone = document.getElementById('phone')?.value || "";
+        const creditCard = document.getElementById('credit-card')?.value || "";
+        const expMonth = document.getElementById('exp-month')?.value || "";
+        const expYear = document.getElementById('exp-year')?.value || "";
+        const cardType = document.getElementById('card-type')?.value || "";
+        const cvc = document.getElementById('cvc')?.value || "";
 
         // Validation
         let errorMessage = ""; // String to store error messages
@@ -16,12 +25,32 @@ document.addEventListener('DOMContentLoaded', function () {
             errorMessage += "Please enter your name.\n";
         }
 
+        if (!email.trim()) {
+            errorMessage += "Please enter your email.\n";
+        }
+
+        if (!phone.trim()) {
+            errorMessage += "Please enter your phone number.\n";
+        }
+
         if (!plan) {
             errorMessage += "Please select a membership plan.\n";
         }
 
-        if (!price) {
-            errorMessage += "Please enter the membership price.\n";
+        if (!creditCard.trim()) {
+            errorMessage += "Please enter your credit card number.\n";
+        }
+
+        if (!expMonth.trim() || !expYear.trim()) {
+            errorMessage += "Please enter the expiration month and year.\n";
+        }
+
+        if (!cardType) {
+            errorMessage += "Please select a card type.\n";
+        }
+
+        if (!cvc.trim()) {
+            errorMessage += "Please enter the CVC.\n";
         }
 
         // Display error message or process form if valid
@@ -32,17 +61,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Local form processing (example - display success message)
         const message = `Thank you, ${name}, for choosing Strength Gym! You have selected the ${plan} plan at $${price} per month. Welcome aboard!`;
-        const responseMessage = document.createElement('div');
-        responseMessage.textContent = message;
-        responseMessage.classList.add('success-message'); // Add a class for styling (optional)
-        membershipForm.parentElement.appendChild(responseMessage);
+        alert(message);
 
         // Reset the form (optional)
         membershipForm.reset();
-
-        // Hide response message after 5 seconds (optional)
-        setTimeout(function () {
-            responseMessage.style.display = 'none';
-        }, 5000);
     });
 });
+
