@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="assets/css/gym.css">
   <script src="https://kit.fontawesome.com/bbd268f373.js" crossorigin="anonymous"></script>
   <style>
-    /* Add custom CSS styles here */
+  
     .bmi-calculator-container {
       margin-top: 200px;
     }
@@ -111,8 +111,7 @@
 
       // Height conversion to inches
       const heightInInches = feet * 12 + inches;
-//The weight (pounds) is divided by the square of the height (heightInInches * heightInInches). Squaring the height accounts for both the person's height and build.
-The result is then multiplied by 703, a conversion factor to get a BMI value within a standard range.
+
       // BMI calculation
       const bmi = (pounds / (heightInInches * heightInInches)) * 703;
 
